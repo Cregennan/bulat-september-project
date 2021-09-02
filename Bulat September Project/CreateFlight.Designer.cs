@@ -41,7 +41,7 @@
             // 
             // button1
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(25, 189);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -89,7 +89,7 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Items.AddRange(new object[] {
             "Пассажирский",
             "Грузовой",
@@ -112,16 +112,19 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(25, 87);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(209, 20);
             this.numericUpDown1.TabIndex = 8;
             // 
             // CreateFlight
             // 
-            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(258, 234);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label3);

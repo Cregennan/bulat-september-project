@@ -17,15 +17,13 @@ namespace Bulat_September_Project
             InitializeComponent();
         }
 
-        public Flight flight { get; private set; }
+        public Flight flight { get; set; }
         private void CreateFlight_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
             
         }
 
@@ -47,20 +45,12 @@ namespace Bulat_September_Project
 
         private void CreateFlight_FormClosing(object sender, FormClosingEventArgs e)
         {
+
             String ArrivalPlace = textBox1.Text;
             int FlightID = (int)numericUpDown1.Value;
             String AircraftType = comboBox1.Text;
-
-            //if (e.CloseReason == CloseReason.UserClosing && ArrivalPlace.Length == 0){
-            //    MessageBox.Show("Проверьте правильность заполнения полей", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    e.Cancel = true;
-            //}
-            //if (e.CloseReason == CloseReason.UserClosing && AircraftType.Length == 0)
-            //{
-            //    MessageBox.Show("Проверьте правильность заполнения полей", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    e.Cancel = true;
-            //}
             flight = new Flight(ArrivalPlace, FlightID, AircraftType);
+
         }
     }
 }

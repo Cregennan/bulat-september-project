@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace Bulat_September_Project
 {
-    class FlightManager
+    public class FlightManager
     {
-        public List<Flight> FlightSchedule { get; private set; }
+        public List<Flight> FlightSchedule { get; private set; } = new List<Flight>();
 
         public Flight GetFlight(int flightID)
         {
+            if (FlightSchedule.Count == 0)
+            {
+                return null;
+            }
             foreach (Flight f in FlightSchedule)
             {
                 if (f.FlightID == flightID)
@@ -19,25 +23,16 @@ namespace Bulat_September_Project
                     return f;
                 }
             }
-            throw new Exception("В базе нет данных о полете с таким номером рейса");
+            return null;
         }
-        public int GetFlightListID(int flightID)
-        {
-            for (int i = 0; i < FlightSchedule.Count; i++)
-            {
-                if (FlightSchedule[i].FlightID == flightID)
-                {
-                    return i;
-                }
-            }
-            throw new Exception("В базе нет данных о полете с таким номером рейса");
-        }
+
         public void AddFlight(Flight f)
         {
             Flight t = GetFlight(f.FlightID);
+
             if (t == null)
             {
-                FlightSchedule.Append<Flight>(f);
+                FlightSchedule.Add(f);
             }
             else
             {
@@ -48,6 +43,10 @@ namespace Bulat_September_Project
         public void RemoveFlight(int flightID)
         {
             Flight f = GetFlight(flightID);
+            if (f == null)
+            {
+                throw new Exception("Рейс с данным номером не найден");
+            }
             FlightSchedule.Remove(f);
         }
     }
