@@ -103,6 +103,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Редактировать";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // textBox2
             // 
@@ -127,6 +128,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Editor";
             this.Text = "Редактирование рейса";
+            this.Load += new System.EventHandler(this.Editor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

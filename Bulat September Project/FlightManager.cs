@@ -49,5 +49,16 @@ namespace Bulat_September_Project
             }
             FlightSchedule.Remove(f);
         }
+
+        public void EditFlight(int flightID, Flight that)
+        {
+            Flight f = GetFlight(flightID);
+            if (f == null)
+            {
+                throw new Exception("Рейс с данным номером не найден");
+            }
+            int i = FlightSchedule.IndexOf(f);
+            FlightSchedule[i] = that;
+        }
     }
 }
