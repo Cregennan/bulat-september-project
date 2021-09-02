@@ -34,8 +34,6 @@
             this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.найтиРейсToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьРейсToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.flightScheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.flightManagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -44,10 +42,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.изменитьРейсToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flightScheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.flightManagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.flightScheduleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flightManagerBindingSource)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -92,15 +92,6 @@
             this.удалитьРейсToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.удалитьРейсToolStripMenuItem.Text = "Удалить рейс";
             this.удалитьРейсToolStripMenuItem.Click += new System.EventHandler(this.УдалитьРейсToolStripMenuItem_Click);
-            // 
-            // flightScheduleBindingSource
-            // 
-            this.flightScheduleBindingSource.DataMember = "FlightSchedule";
-            this.flightScheduleBindingSource.DataSource = this.flightManagerBindingSource;
-            // 
-            // flightManagerBindingSource
-            // 
-            this.flightManagerBindingSource.DataSource = typeof(Bulat_September_Project.FlightManager);
             // 
             // textBox1
             // 
@@ -176,6 +167,15 @@
             this.изменитьРейсToolStripMenuItem.Text = "Изменить рейс";
             this.изменитьРейсToolStripMenuItem.Click += new System.EventHandler(this.ИзменитьРейсToolStripMenuItem_Click);
             // 
+            // flightScheduleBindingSource
+            // 
+            this.flightScheduleBindingSource.DataMember = "FlightSchedule";
+            this.flightScheduleBindingSource.DataSource = this.flightManagerBindingSource;
+            // 
+            // flightManagerBindingSource
+            // 
+            this.flightManagerBindingSource.DataSource = typeof(Bulat_September_Project.FlightManager);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,14 +185,14 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
-            this.Text = "Главная";
+            this.Text = "Булат Хуесос";
             this.Load += new System.EventHandler(this.Main_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.flightScheduleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flightManagerBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flightScheduleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightManagerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
